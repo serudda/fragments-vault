@@ -8,30 +8,41 @@ A vault to capture phrases, quotes, and ideas found while reading.
 
 ## The Problem it Solves
 
-You are reading a book, a tweet, an article — and you find a phrase that hits you. You want to save it, but:
+You are deep in the zone, coding or reading documentation, and you find a concept or quote that resonates.
 
-- If you leave it in a single file, it gets lost among hundreds
-- If you create folders by topic, you lose connections between ideas
-- If you don't note why it caught your attention, in 6 months you won't remember
+You want to save it, but the friction kills the flow:
 
-This system solves that.
+- **Context Switching:** Opening Notion, Obsidian, or a notes app breaks your mental state.
+- **The "Copy-Paste" Graveyard:** You dump it in a generic "Notes" page and never look at it again because it lacks context (tags, source, _why_ it mattered).
+- **Vendor Lock-in:** Your second brain is trapped in a proprietary database instead of plain text files you own.
+
+**Fragments Vault** solves this by bringing your note-taking directly into your terminal workflow, powered by Claude.
+
+## Why use this with Claude Code?
+
+1.  **Zero Friction:** Stay in your terminal. No switching apps. Just a command.
+2.  **AI-Powered Taxonomy:** You don't need to manually organize. Claude suggests tags and categories based on the content.
+3.  **Git-Backed:** Your thoughts are just Markdown files. Version control them. Diff them. Own them.
+4.  **Context Preservation:** The system forces you to answer "Why?" — ensuring that in 6 months, you remember why this fragment mattered.
 
 ---
 
 ## Structure
 
+This project uses a flat file structure for simplicity.
+
+> **Note:** The files `career.md`, `building.md`, and `life.md` are just **examples** of categories. You can rename them, delete them, or add new ones (e.g., `ruby.md`, `marketing.md`) to fit your mental model.
+
 ```
 fragments/
 ├── inbox.md         # Where everything arrives (unprocessed)
-├── career.md        # Work, money, negotiation, employers
-├── building.md      # Side projects, indie hacking, startups
-├── life.md          # Philosophy, values, relationships, decisions
-└── craft.md         # Design, UI, writing, creativity
+├── career.md        # Example: Work, money, negotiation
+├── building.md      # Example: Side projects, shipping, startups
+└── life.md          # Example: Philosophy, values, decisions
 ```
 
-**inbox.md** is temporary — fragments live there until you process and categorize them.
-
-**The 4 category files** are your permanent library.
+**inbox.md** is the landing zone. Fragments live there until you process them.
+Check `fragments/inbox.md` to see a real-world example of a captured fragment.
 
 ---
 
@@ -49,9 +60,9 @@ Tell Claude:
 
 Claude will ask you:
 
-1. **Source** — Where does it come from? (author, book, tweet, article)
-2. **Tags** — It will show you existing tags and suggest some
-3. **Why** — Why did it catch your attention?
+1.  **Source** — Where does it come from? (author, book, tweet, article)
+2.  **Tags** — It will show you existing tags and suggest some
+3.  **Why** — Why did it catch your attention?
 
 ### Step 3: Done
 
@@ -86,15 +97,14 @@ They are in `CLAUDE.md` under "Tags Registry". Before creating a new one, check 
 | **Career**   | #salary #negotiation #employers #value #leverage #job-search #promotion #skills #expertise    |
 | **Building** | #side-projects #indie #startup #shipping #mvp #build-in-public #product #growth #monetization |
 | **Life**     | #honesty #values #relationships #decisions #freedom #minimalism #time #priorities #focus      |
-| **Craft**    | #design #ui #writing #creativity #process #attention-to-detail #quality #learning #mastery    |
 
 ### Creating new tags
 
 If you need a tag that doesn't exist:
 
-1. Claude will propose it with "(new)"
-2. You confirm
-3. It gets added to the registry in `CLAUDE.md`
+1.  Claude will propose it with "(new)"
+2.  You confirm
+3.  It gets added to the registry in `CLAUDE.md`
 
 This prevents ending up with #career and #carrera and #work meaning the same thing.
 
@@ -112,7 +122,6 @@ This prevents ending up with #career and #carrera and #work meaning the same thi
 │   /process-fragments ──► categorize ──► career.md           │
 │                                         building.md         │
 │                                         life.md             │
-│                                         craft.md            │
 │                                                             │
 │   (when you need inspiration)                               │
 │                                                             │

@@ -16,8 +16,7 @@ fragments/
 ├── inbox.md         # Unprocessed fragments (capture here)
 ├── career.md        # Work, money, negotiation, employers
 ├── building.md      # Side projects, indie hacking, startups
-├── life.md          # Philosophy, values, relationships, decisions
-└── craft.md         # Design, UI, writing, creativity
+└── life.md          # Philosophy, values, relationships, decisions
 ```
 
 ---
@@ -45,26 +44,26 @@ Each fragment follows this structure:
 Keep this list updated to avoid duplicates. When adding a new tag, add it here first.
 
 ### Career
+
 #salary #negotiation #employers #value #leverage #job-search #promotion #skills #expertise
 
 ### Building
+
 #side-projects #indie #startup #shipping #mvp #build-in-public #product #growth #monetization
 
 ### Life
-#honesty #values #relationships #decisions #freedom #minimalism #time #priorities #focus
 
-### Craft
-#design #ui #writing #creativity #process #attention-to-detail #quality #learning #mastery
+#honesty #values #relationships #decisions #freedom #minimalism #time #priorities #focus
 
 ---
 
 ## Skills
 
-| Skill | Purpose |
-|-------|---------|
-| `/save-fragment` | Quick capture to inbox.md |
+| Skill                | Purpose                                    |
+| -------------------- | ------------------------------------------ |
+| `/save-fragment`     | Quick capture to inbox.md                  |
 | `/process-fragments` | Process inbox, categorize, move to library |
-| `/browse-fragments` | Search and explore fragments |
+| `/browse-fragments`  | Search and explore fragments               |
 
 ---
 
