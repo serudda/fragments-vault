@@ -4,13 +4,13 @@ Unprocessed fragments. Use `/process-fragments` to categorize and move to librar
 
 ---
 
-> "¿Te encanta aprender? Genial, replantéalo como "investigación" y ahora ese es literalmente tu trabajo principal. La mayoría de las cosas sobre las que escribo simplemente surgen de aprender sobre mis intereses y de usar las redes sociales como si estuviera "tomando notas en público".
+> "Do you love learning? Great, reframe it as 'research' and now that's literally your main job. Most of the things I write about simply come from learning about my interests and using social media as if I were 'taking notes in public'.
 >
-> (Ya estás invirtiendo tiempo en aprender, ahora simplemente dedica ese tiempo a aprender en público y ¡boom!, tendrás la base de un negocio)."
+> (You're already investing time in learning, now just dedicate that time to learning in public and boom, you'll have the foundation of a business)."
 
 **Source**: Dan Koe, Twitter/X
 **Tags**: #build-in-public #learning #monetization
-**Why**: Muchas veces aprendemos cosas y simplemente no compartimos nuestros hallazgos. Queda entre la fuente y yo.
+**Why**: We often learn things and simply don't share our findings. It stays between the source and me.
 **Date**: 2026-01-13
 
 ---
