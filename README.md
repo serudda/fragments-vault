@@ -103,22 +103,20 @@ This prevents ending up with #career and #carrera and #work meaning the same thi
 
 ## The Complete Flow
 
-```
-┌─────────────────────────────────────────────────────────────┐
-│                                                             │
-│   READ ──► FIND PHRASE ──► /save-fragment ──► inbox.md      │
-│                                                             │
-│   (later, when you have time)                               │
-│                                                             │
-│   /process-fragments ──► categorize ──► career.md           │
-│                                         building.md         │
-│                                         life.md             │
-│                                                             │
-│   (when you need inspiration)                               │
-│                                                             │
-│   /browse-fragments ──► search by tag ──► find              │
-│                                                             │
-└─────────────────────────────────────────────────────────────┘
+```mermaid
+graph LR
+    A[Read Source] -->|/save-fragment| B[inbox.md]
+    B -.->|Later| C[/process-fragments]
+    C -->|Categorize| D[Vault<br/>career.md / life.md]
+    D -.->|Inspiration| E[/browse-fragments]
+    E -->|Search| F[Find & Use]
+
+    style A fill:#2d3748,stroke:#4a5568,color:#fff
+    style B fill:#2d3748,stroke:#4a5568,color:#fff
+    style C fill:#2d3748,stroke:#4a5568,color:#fff
+    style D fill:#2d3748,stroke:#4a5568,color:#fff
+    style E fill:#2d3748,stroke:#4a5568,color:#fff
+    style F fill:#2d3748,stroke:#4a5568,color:#fff
 ```
 
 ---
