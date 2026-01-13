@@ -123,11 +123,11 @@ graph LR
 
 ## Available Skills
 
-| Skill                | What it does                                   |
-| -------------------- | ---------------------------------------------- |
-| `/save-fragment`     | Quick capture to inbox                         |
-| `/process-fragments` | Process inbox and move to categories (pending) |
-| `/browse-fragments`  | Search and explore fragments (pending)         |
+| Skill                | What it does                               |
+| -------------------- | ------------------------------------------ |
+| `/save-fragment`     | Quick capture to inbox                     |
+| `/process-fragments` | Process inbox and move to categories       |
+| `/browse-fragments`  | Search and explore fragments (in progress) |
 
 ---
 
