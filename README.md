@@ -135,7 +135,7 @@ graph LR
 
 ### The "Why" is the most valuable part
 
-In 2 years you will read "The best time to plant a tree was 20 years ago" and you won't remember why you saved it. The "why" gives you context:
+In the future you will read "The best time to plant a tree was 20 years ago" and you won't remember why you saved it. The "why" gives you context:
 
 - "Reminded me that it's always a good time to start"
 - "Contradicts the idea that you need the perfect moment"
