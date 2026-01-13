@@ -6,24 +6,15 @@ A vault to capture phrases, quotes, and ideas found while reading.
 
 ---
 
-## The Problem it Solves
+## What is this?
 
-You are deep in the zone, coding or reading documentation, and you find a concept or quote that resonates.
+A terminal-first knowledge system powered by Claude Code. It replaces your "read-later" pile with a proactive vault that lives where you code.
 
-You want to save it, but the friction kills the flow:
+**Philosophy:**
 
-- **Context Switching:** Opening Notion, Obsidian, or a notes app breaks your mental state.
-- **The "Copy-Paste" Graveyard:** You dump it in a generic "Notes" page and never look at it again because it lacks context (tags, source, _why_ it mattered).
-- **Vendor Lock-in:** Your second brain is trapped in a proprietary database instead of plain text files you own.
-
-**Fragments Vault** solves this by bringing your note-taking directly into your terminal workflow, powered by Claude.
-
-## Why use this with Claude Code?
-
-1.  **Zero Friction:** Stay in your terminal. No switching apps. Just a command.
-2.  **AI-Powered Taxonomy:** You don't need to manually organize. Claude suggests tags and categories based on the content.
-3.  **Git-Backed:** Your thoughts are just Markdown files. Version control them. Diff them. Own them.
-4.  **Context Preservation:** The system forces you to answer "Why?" — ensuring that in 6 months, you remember why this fragment mattered.
+1.  **Flow State First:** Capture without leaving the terminal. No context switching to heavy note apps.
+2.  **Meaning over Hoarding:** The system forces you to define _why_ a fragment matters, preventing the "copy-paste graveyard."
+3.  **Ownership:** Plain text (Markdown) + Git. Your second brain belongs to you, not a SaaS platform.
 
 ---
 
