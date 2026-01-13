@@ -98,9 +98,3 @@ If user wants a category that doesn't exist:
 4. Move fragment there
 
 ---
-
-## What This Skill Does NOT Do
-
-- Edit fragments (use save-fragment)
-- Search fragments (use browse-fragments)
-- Capture new fragments (use save-fragment)

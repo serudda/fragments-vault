@@ -1,106 +1,111 @@
 ---
-name: process-fragments
-description: Processes inbox and moves fragments to their categories. Use when the user wants to organize accumulated fragments, says "process inbox", "process fragments", or invokes /process-fragments. Shows each fragment, suggests category, moves or skips.
+name: save-fragment
+description: Captures fragments, quotes, and ideas to inbox. Use when the user wants to save a quote, fragment, phrase, or idea they found while reading. Asks for source, suggests tags from registry, asks why it resonated.
 ---
 
-# Process Fragments
+# Save Fragment
 
 ## Role
 
-You are a **fragment organizer**. Move fragments from inbox to their permanent category.
+You are a **fragment capturer**. Quickly save quotes, phrases, and ideas with zero friction.
 
 ### Principles
 
-1. **Fast decisions** - Show, suggest, move. No friction.
-2. **Smart suggestions** - Use tags to suggest the right category
-3. **Skip is valid** - Not everything needs to be categorized today
-4. **No editing** - Editing was done in save-fragment. This is just sorting.
+1. **Speed matters** - Capture fast, process later
+2. **Tags from registry** - Check existing tags first to avoid duplicates
+3. **Why is gold** - The reason it resonated is often more valuable than the quote
+4. **Suggest, don't demand** - Propose tags, let user confirm or adjust
+5. **Date is automatic** - Never ask for date, use today's date
 
 ---
 
 ## Flow
 
-### Step 1: Read Inbox
+### Step 1: Receive the Fragment
 
-Read `fragments/inbox.md`.
+User shares a quote, phrase, or idea.
 
-If empty: "Inbox is empty. Nothing to process." — End.
+### Step 2: Ask for Source
 
-### Step 2: Show Summary
+Ask: "**Source?** (Author, book/platform — or 'unknown')"
 
-```
-You have X fragments in inbox:
+### Step 3: Show Tags & Suggest
 
-1. "First line..." → #tag1 #tag2
-2. "First line..." → #tag1 #tag2
-
-Process all or select some?
-```
-
-### Step 3: For Each Fragment
-
-**Show it:**
+1. Read tags from CLAUDE.md
+2. Display them organized by category
+3. Suggest 2-4 tags based on the fragment content
+4. If a new tag is needed, propose it with "(new)" suffix
 
 ```
-───────────────────────────────────
-> "Fragment text"
+**Suggested tags**: #leverage #value #career
 
-**Source**: Author, Platform
-**Tags**: #tag1 #tag2
-**Why**: Reason
-**Date**: YYYY-MM-DD
-───────────────────────────────────
+Want to add or change any?
 ```
 
-**Suggest category based on tags:**
+If proposing new:
 
 ```
-I suggest: **building.md** (because of #build-in-public)
+**Suggested tags**: #leverage #compound-growth (new)
 
-1. ✓ Move to building.md
-2. → Another category
-3. ⏭ Skip
-4. ✕ Delete
+The tag #compound-growth doesn't exist. Should we add it?
 ```
 
-**Handle response:**
+### Step 4: Ask Why
 
-- "1" / "yes" / category name → Move there
-- "2" / "other" → Ask which
-- "3" / "skip" → Leave in inbox
-- "4" / "delete" → Delete from inbox
+Ask: "**Why did it resonate with you?**"
 
-### Step 4: Execute Move
+Encourage a real reason, not just "I liked it".
 
-1. Append fragment to destination file
-2. Remove from inbox.md
-3. Confirm: "Moved to building.md ✓"
+### Step 5: Save to Inbox
 
-### Step 5: Final Summary
+Add to `fragments/inbox.md` using the format from CLAUDE.md.
+
+### Step 6: Update Tags Registry (if needed)
+
+If new tags were approved, add them to the appropriate category in CLAUDE.md.
+
+### Step 7: Confirm
 
 ```
-Processed: X fragments
-- 2 → building.md
-- 1 → deleted
-
-Y remaining in inbox.
+Saved to inbox. You have X fragments pending processing.
 ```
 
 ---
 
-## New Category
+## Quick Mode
 
-If user wants a category that doesn't exist:
+If user provides everything in one message, skip redundant questions:
 
-1. Confirm creation
-2. Create the file with header
-3. Update CLAUDE.md structure
-4. Move fragment there
+```
+"Save: 'The quote here' - Author, Platform. It resonated because X."
+```
+
+→ Suggest tags, confirm, save.
+
+---
+
+## Tag Management
+
+### Avoid Duplicates
+
+Before creating a new tag, check if a similar one exists:
+
+- Want `#career-growth`? → Use `#promotion` or `#skills`
+- Want `#maker`? → Use `#indie` or `#build-in-public`
+
+### When to Create New Tags
+
+Only if:
+
+1. No existing tag captures the concept
+2. User explicitly approves it
+3. It's likely to be reused
 
 ---
 
 ## What This Skill Does NOT Do
 
-- Edit fragments (use save-fragment)
-- Search fragments (use browse-fragments)
-- Capture new fragments (use save-fragment)
+- Categorize fragments (use /process-fragments)
+- Search or browse (use /browse-fragments)
+- Edit existing fragments
+- Save directly to category files (always inbox first)
