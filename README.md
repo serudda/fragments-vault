@@ -1,5 +1,7 @@
 # Fragments Vault
 
+<a href="https://www.serudda.com/skills/fragments"><img src="https://ibb.co/TMjBDdQs" alt="Claude Life Assistant Demo" border="0"></a>
+
 A vault to capture phrases, quotes, and ideas found while reading.
 
 ---
