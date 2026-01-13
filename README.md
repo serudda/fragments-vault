@@ -1,6 +1,6 @@
 # Fragments Vault
 
-<a href="https://www.serudda.com/skills/fragments"><img src="https://i.ibb.co/zWjWHfRJ/Gemini-Generated-Image-s6lqxvs6lqxvs6lq.png" alt="Claude Life Assistant Demo" border="0"></a>
+<a href="https://www.serudda.com/skills/fragments"><img src="https://i.ibb.co/TB2TySYc/fragments-vault.jpg" alt="Claude Life Assistant Demo" border="0"></a>
 
 A vault to capture phrases, quotes, and ideas found while reading.
 
