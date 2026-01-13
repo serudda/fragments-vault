@@ -105,10 +105,10 @@ This prevents ending up with #career and #carrera and #work meaning the same thi
 
 ```mermaid
 graph LR
-    A[Read Source] -->|/save-fragment| B[inbox.md]
-    B -.->|Later| C[/process-fragments]
-    C -->|Categorize| D[Vault<br/>career.md / life.md]
-    D -.->|Inspiration| E[/browse-fragments]
+    A[Read Source] -->|"/save-fragment"| B[inbox.md]
+    B -.->|Later| C["/process-fragments"]
+    C -->|Categorize| D["Vault<br/>career.md / life.md"]
+    D -.->|Inspiration| E["/browse-fragments"]
     E -->|Search| F[Find & Use]
 
     style A fill:#2d3748,stroke:#4a5568,color:#fff
