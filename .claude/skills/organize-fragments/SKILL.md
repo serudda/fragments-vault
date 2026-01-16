@@ -1,9 +1,9 @@
 ---
-name: process-fragments
-description: Processes inbox and moves fragments to their categories. Use when the user wants to organize accumulated fragments, says "process inbox", "process fragments", or invokes /process-fragments. Shows each fragment, suggests category, moves or skips.
+name: organize-fragments
+description: Processes inbox and moves fragments to their categories. Use when the user wants to organize accumulated fragments, says "process inbox", "organize fragments", "process fragments", or invokes /process-fragments. Shows each fragment, suggests category, moves or skips.
 ---
 
-# Process Fragments
+# Organize Fragments
 
 ## Role
 
@@ -79,7 +79,7 @@ I suggest: **building.md** (because of #build-in-public)
 ### Step 5: Final Summary
 
 ```
-Processed: X fragments
+Organized: X fragments
 - 2 → building.md
 - 1 → deleted
 

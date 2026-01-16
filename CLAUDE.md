@@ -59,16 +59,16 @@ Keep this list updated to avoid duplicates. When adding a new tag, add it here f
 
 ## Skills
 
-| Skill                | Purpose                                    |
-| -------------------- | ------------------------------------------ |
-| `/save-fragment`     | Quick capture to inbox.md                  |
-| `/process-fragments` | Process inbox, categorize, move to library |
-| `/browse-fragments`  | Search and explore fragments               |
+| Skill                 | Purpose                                    |
+| --------------------- | ------------------------------------------ |
+| `/save-fragment`      | Quick capture to inbox.md                  |
+| `/organize-fragments` | Process inbox, categorize, move to library |
+| `/browse-fragments`   | Search and explore fragments               |
 
 ---
 
 ## Workflow
 
 1. **Capture** → `/save-fragment` adds to `inbox.md`
-2. **Process** → `/process-fragments` categorizes and moves to the right file
+2. **Organize** → `/organize-fragments` categorizes and moves to the right file
 3. **Use** → `/browse-fragments` to find inspiration when needed

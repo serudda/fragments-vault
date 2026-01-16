@@ -51,24 +51,27 @@ Tell Claude:
 
 Claude will ask you:
 
-1.  **Source** — Where does it come from? (author, book, tweet, article)
-2.  **Tags** — It will show you existing tags and suggest some
-3.  **Why** — Why did it catch your attention?
+1.  **Author** — Who created this?
+2.  **Source** — Where is this from? (e.g., Book, Tweet, URL, Podcast, Conversation...)
+3.  **Tags** — It will show you existing tags and suggest some
+4.  **Why** — Why did it catch your attention?
 
 ### Step 3: Done
 
 The fragment is saved in `inbox.md` with this structure:
 
-```markdown
 ---
+
 > "The exact phrase here"
 
-**Source**: Naval Ravikant, Twitter
+**Author**: Naval Ravikant
+**Source**: Twitter
 **Tags**: #leverage #value #career
 **Why**: Connects with my idea that specialization comes from obsession
 **Date**: 2026-01-13
 
 ---
+
 ```
 
 ---
@@ -101,12 +104,9 @@ This prevents ending up with #career and #carrera and #work meaning the same thi
 
 ---
 
-## The Complete Flow
-
-```mermaid
 graph LR
     A[Read Source] -->|"/save-fragment"| B[inbox.md]
-    B -.->|Later| C["/process-fragments"]
+    B -.->|Later| C["/organize-fragments"]
     C -->|Categorize| D["Vault<br/>career.md / life.md"]
     D -.->|Inspiration| E["/browse-fragments"]
     E -->|Search| F[Find & Use]
@@ -123,11 +123,11 @@ graph LR
 
 ## Available Skills
 
-| Skill                | What it does                               |
-| -------------------- | ------------------------------------------ |
-| `/save-fragment`     | Quick capture to inbox                     |
-| `/process-fragments` | Process inbox and move to categories       |
-| `/browse-fragments`  | Search and explore fragments (in progress) |
+| Skill                 | What it does                               |
+| --------------------- | ------------------------------------------ |
+| `/save-fragment`      | Quick capture to inbox                     |
+| `/organize-fragments` | Process inbox and move to categories       |
+| `/browse-fragments`   | Search and explore fragments (in progress) |
 
 ---
 

@@ -109,7 +109,7 @@ Only if:
 
 ## What This Skill Does NOT Do
 
-- Categorize fragments (use /process-fragments)
+- Categorize fragments (use /organize-fragments)
 - Search or browse (use /browse-fragments)
 - Edit existing fragments
 - Save directly to category files (always inbox first)
