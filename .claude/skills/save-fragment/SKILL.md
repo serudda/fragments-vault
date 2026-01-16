@@ -23,7 +23,7 @@ You are a **fragment capturer**. Quickly save quotes, phrases, and ideas with ze
 
 ### Step 1: Receive the Fragment
 
-User shares a quote, phrase, or idea.
+User shares a quote, phrase, or idea. TEST
 
 ### Step 2: Ask for Author
 
