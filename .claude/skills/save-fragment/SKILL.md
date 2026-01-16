@@ -1,111 +1,103 @@
 ---
 name: save-fragment
-description: Captures fragments, quotes, and ideas to inbox. Use when the user wants to save a quote, fragment, phrase, or idea they found while reading. Asks for source, suggests tags from registry, asks why it resonated.
+description: Captures raw ideas/quotes to inbox.md with metadata. Use when user shares new content to save. Handles source attribution, tag suggestion, and resonance checks.
 ---
 
 # Save Fragment
 
-## Role
+## Role & Objective
 
-You are a **fragment capturer**. Quickly save quotes, phrases, and ideas with zero friction.
+**Role**: You are a **Knowledge Librarian**. You prioritize speed of capture but insist on proper metadata (source and context).
+**Objective**: Rapidly capture a fragment into the inbox with minimal friction while ensuring high-quality metadata (Source + Resonance + Tags).
 
-### Principles
+### Core Principles
 
-1. **Speed matters** - Capture fast, process later
-2. **Tags from registry** - Check existing tags first to avoid duplicates
-3. **Why is gold** - The reason it resonated is often more valuable than the quote
-4. **Suggest, don't demand** - Propose tags, let user confirm or adjust
-5. **Date is automatic** - Never ask for date, use today's date
-
----
-
-## Flow
-
-### Step 1: Receive the Fragment
-
-User shares a quote, phrase, or idea.
-
-### Step 2: Ask for Source
-
-Ask: "**Source?** (Author, book/platform — or 'unknown')"
-
-### Step 3: Show Tags & Suggest
-
-1. Read tags from CLAUDE.md
-2. Display them organized by category
-3. Suggest 2-4 tags based on the fragment content
-4. If a new tag is needed, propose it with "(new)" suffix
-
-```
-**Suggested tags**: #leverage #value #career
-
-Want to add or change any?
-```
-
-If proposing new:
-
-```
-**Suggested tags**: #leverage #compound-growth (new)
-
-The tag #compound-growth doesn't exist. Should we add it?
-```
-
-### Step 4: Ask Why
-
-Ask: "**Why did it resonate with you?**"
-
-Encourage a real reason, not just "I liked it".
-
-### Step 5: Save to Inbox
-
-Add to `fragments/inbox.md` using the format from CLAUDE.md.
-
-### Step 6: Update Tags Registry (if needed)
-
-If new tags were approved, add them to the appropriate category in CLAUDE.md.
-
-### Step 7: Confirm
-
-```
-Saved to inbox. You have X fragments pending processing.
-```
+1. **Speed Matters**: Capture fast, process later. Don't bog the user down with heavy categorization now.
+2. **Registry Integrity**: Always prefer existing tags from `CLAUDE.md` over creating new ones to avoid pollution.
+3. **Resonance is Gold**: The "Why" (user's reaction) is more valuable than the quote itself. Always get it.
+4. **Dates are Automatic**: Never ask for the date; always use the current system date.
 
 ---
 
-## Quick Mode
+## When to Use This Skill
 
-If user provides everything in one message, skip redundant questions:
-
-```
-"Save: 'The quote here' - Author, Platform. It resonated because X."
-```
-
-→ Suggest tags, confirm, save.
+- User shares a quote, phrase, or idea ("Save this:", "Remember:", "Great quote:")
+- User pastes a block of text without context (assume they want to save it)
+- User explicitly says "save fragment"
 
 ---
 
-## Tag Management
+## Prerequisites & Inputs
 
-### Avoid Duplicates
+Before writing to the file, ensure you have gathered:
 
-Before creating a new tag, check if a similar one exists:
-
-- Want `#career-growth`? → Use `#promotion` or `#skills`
-- Want `#maker`? → Use `#indie` or `#build-in-public`
-
-### When to Create New Tags
-
-Only if:
-
-1. No existing tag captures the concept
-2. User explicitly approves it
-3. It's likely to be reused
+| Input       | Description                  | Strategy                                                  |
+| ----------- | ---------------------------- | --------------------------------------------------------- |
+| `Content`   | The text/idea to save        | Copied from user message                                  |
+| `Author`    | Who created this?            | **Ask** if not provided ("Who said this?")                |
+| `Source`    | Origin context (Open format) | **Ask** if not provided ("Where from? e.g. Book, Url...") |
+| `Tags`      | 2-4 categorization labels    | **Suggest** from `CLAUDE.md`; ask approval                |
+| `Resonance` | Why this matters to the user | **Ask** if not provided ("Why does this stick?")          |
 
 ---
 
-## What This Skill Does NOT Do
+## The Workflow
 
-- Categorize fragments (use /process-fragments)
-- Search or browse (use /browse-fragments)
-- Edit existing fragments
-- Save directly to category files (always inbox first)
+### Step 1: Analyze & Quick-Check
+
+Check if the user provided everything in one go (Quick Mode).
+
+- **IF** Content + Author + Source + Resonance are present: -> Jump to **Step 3 (Tags)**.
+- **IF** missing info: -> Proceed to **Step 2**.
+
+### Step 2: Gaps Filling (Conversational Loop)
+
+Ask for missing critical metadata **one by one** or grouped if efficient.
+
+1. **Author**: "Who is the author?"
+2. **Source**: "Where is this from? (e.g., Book, Tweet, URL, Podcast, Conversation...)"
+3. **Resonance**: "Why did this resonate with you?" (Critical: don't skip unless Quick Mode).
+
+### Step 3: Tag Suggestion
+
+1. Read `CLAUDE.md` to get the current Tag Registry.
+2. Analyze the content and finding matching existing tags.
+3. Suggest 2-4 tags to the user.
+
+   - _Logic_: If a perfect match exists, use it. If a new tag is strictly necessary, mark it as `(new)` and ask permission.
+
+   > "Suggested tags: #leverage #mental-models. Good?"
+
+### Step 4: Write to Inbox
+
+Append the entry to `fragments/inbox.md`.
+
+_Format logic_:
+
+- Use the format defined in `CLAUDE.md` (usually bullet point or block).
+- Date: `YYYY-MM-DD` (Current).
+
+### Step 5: Update Registry (Conditional)
+
+**IF AND ONLY IF** the user approved a **new** tag in Step 3:
+
+- Add the new tag to the appropriate list in `CLAUDE.md`.
+
+---
+
+## Output Specification
+
+- **Deliverable**: File Append
+- **Location**: `fragments/inbox.md`
+- **Confirmation**:
+  > "✅ Saved to Inbox. [X] pending fragments."
+
+---
+
+## Troubleshooting
+
+| Issue                       | Solution                                                                          |
+| --------------------------- | --------------------------------------------------------------------------------- |
+| User is vague ("I like it") | Push gently: "What specifically? The tone, the insight...?"                       |
+| Duplicate Tags              | If user asks for `#career-growth` but `#career` exists, suggest the existing one. |
+| No Source                   | Mark as "Unknown" or "To verify" after 1 attempt to ask.                          |
