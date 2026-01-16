@@ -23,13 +23,17 @@ You are a **fragment capturer**. Quickly save quotes, phrases, and ideas with ze
 
 ### Step 1: Receive the Fragment
 
-User shares a quote, phrase, or idea.
+User shares a quote, phrase, or idea. TEST
 
-### Step 2: Ask for Source
+### Step 2: Ask for Author
 
-Ask: "**Source?** (Author, book/platform — or 'unknown')"
+Ask: "**Who is the author?** (name or 'unknown')"
 
-### Step 3: Show Tags & Suggest
+### Step 3: Ask for Source
+
+Ask: "**What is the source?** (book, platform, URL, or 'unknown')"
+
+### Step 4: Show Tags & Suggest
 
 1. Read tags from CLAUDE.md
 2. Display them organized by category
@@ -39,7 +43,7 @@ Ask: "**Source?** (Author, book/platform — or 'unknown')"
 ```
 **Suggested tags**: #leverage #value #career
 
-Want to add or change any?
+Do you want to add or change any?
 ```
 
 If proposing new:
@@ -50,24 +54,24 @@ If proposing new:
 The tag #compound-growth doesn't exist. Should we add it?
 ```
 
-### Step 4: Ask Why
+### Step 5: Ask Why
 
-Ask: "**Why did it resonate with you?**"
+Ask: "**Why did it catch your attention?**"
 
 Encourage a real reason, not just "I liked it".
 
-### Step 5: Save to Inbox
+### Step 6: Save to Inbox
 
 Add to `fragments/inbox.md` using the format from CLAUDE.md.
 
-### Step 6: Update Tags Registry (if needed)
+### Step 7: Update Tags Registry (if needed)
 
 If new tags were approved, add them to the appropriate category in CLAUDE.md.
 
-### Step 7: Confirm
+### Step 8: Confirm
 
 ```
-Saved to inbox. You have X fragments pending processing.
+Saved to inbox. You have X pending fragments to process.
 ```
 
 ---
@@ -77,7 +81,7 @@ Saved to inbox. You have X fragments pending processing.
 If user provides everything in one message, skip redundant questions:
 
 ```
-"Save: 'The quote here' - Author, Platform. It resonated because X."
+"Guarda: 'The quote here' - Author: Name, Source: Book/URL. Me resonó porque X."
 ```
 
 → Suggest tags, confirm, save.
